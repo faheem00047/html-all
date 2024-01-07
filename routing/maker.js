@@ -17,10 +17,10 @@ const { Tools } = require("./../scrapping/tools");
 const sticker = new Sticker();
 const tools = new Tools();
 const apikeyAndLimit = require("../library/apikeyAndLimit");
-const creator = "Farhannnnn";
+const creator = "Faheem";
 router = Router();
 
-router.get("/styletext", apikeyAndLimit, async (req, res) => {
+router.get("/styletext", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	let respon = await axios.get(`http://qaz.wtf/u/convert.cgi?text=${encodeURIComponent(text)}`);
@@ -29,7 +29,7 @@ router.get("/styletext", apikeyAndLimit, async (req, res) => {
 	obj = $('table').text();
 	resSukses(res, obj);
 });
-router.get("/quotes", apikeyAndLimit, async (req, res) => {
+router.get("/quotes", async (req, res) => {
 	const { text, wm, background } = req.query;
 	if (!text) return res.json(loghandler.nottext);
 	if (!wm) return resError(res, "masukkan parameter wm");
@@ -44,7 +44,7 @@ router.get("/quotes", apikeyAndLimit, async (req, res) => {
 		res.json(loghandler.error);
 	});
 });
-router.get("/rmbg", apikeyAndLimit, async (req, res) => {
+router.get("/rmbg", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -67,7 +67,7 @@ router.get("/rmbg", apikeyAndLimit, async (req, res) => {
 		res.json(loghandler.error);
 	});
 });
-router.get("/caution", apikeyAndLimit, async (req, res) => {
+router.get("/caution", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	await getBuffer(`https://api.popcat.xyz/caution?text=${text}`)
@@ -79,7 +79,7 @@ router.get("/caution", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/communism", apikeyAndLimit, async (req, res) => {
+router.get("/communism", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -92,7 +92,7 @@ router.get("/communism", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/drake", apikeyAndLimit, async (req, res) => {
+router.get("/drake", async (req, res) => {
 	const { text, text2 } = req.query;
 	if (!text) return res.json(loghandler.nottext);
 	if (!text2) return res.json(loghandler.nottext2);
@@ -105,7 +105,7 @@ router.get("/drake", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/biden", apikeyAndLimit, async (req, res) => {
+router.get("/biden", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	await getBuffer(`https://api.popcat.xyz/biden?text=${text}`)
@@ -117,7 +117,7 @@ router.get("/biden", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/facts", apikeyAndLimit, async (req, res) => {
+router.get("/facts", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	await getBuffer(`https://api.popcat.xyz/facts?text=${text}`)
@@ -129,7 +129,7 @@ router.get("/facts", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/badut", apikeyAndLimit, async (req, res) => {
+router.get("/badut", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -137,7 +137,7 @@ router.get("/badut", apikeyAndLimit, async (req, res) => {
 	res.type("png");
 	res.send(buffer);
 });
-router.get("/badut2", apikeyAndLimit, async (req, res) => {
+router.get("/badut2", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -145,14 +145,14 @@ router.get("/badut2", apikeyAndLimit, async (req, res) => {
 	res.type("png");
 	res.send(buffer);
 });
-router.get("/badut3", apikeyAndLimit, async (req, res) => {
+router.get("/badut3", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
 	buffer = await getBuffer(`https://canvacord-production.up.railway.app/api/badut3?url=${encodeURIComponent(url)}`);
 	res.type("png").send(buffer);
 });
-router.get("/twitter", apikeyAndLimit, async (req, res) => {
+router.get("/twitter", async (req, res) => {
 	const { url, username, text } = req.query;
 	if (!url) return res.json(loghandler.noturl);
 	if (!username) return res.json(loghandler.notusername);
@@ -167,7 +167,7 @@ router.get("/twitter", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/stickbug", apikeyAndLimit, async (req, res) => {
+router.get("/stickbug", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -181,7 +181,7 @@ router.get("/stickbug", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	}
 });
-router.get("/tweet", apikeyAndLimit, async (req, res) => {
+router.get("/tweet", async (req, res) => {
 	const query = req.query.username;
 	if (!query) return res.json(loghandler.notusername);
 	const text = req.query.text;
@@ -196,7 +196,7 @@ router.get("/tweet", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	}
 });
-router.get("/animeface", apikeyAndLimit, async (req, res) => {
+router.get("/animeface", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -211,7 +211,7 @@ router.get("/animeface", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	}
 });
-router.get("/iphonex", apikeyAndLimit, async (req, res) => {
+router.get("/iphonex", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -226,7 +226,7 @@ router.get("/iphonex", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	}
 });
-router.get("/kannagen", apikeyAndLimit, async (req, res) => {
+router.get("/kannagen", async (req, res) => {
 	const query = req.query.text;
 	if (!query) return res.json(loghandler.nottext);
 	try {
@@ -238,7 +238,7 @@ router.get("/kannagen", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	}
 })
-router.get("/captcha", apikeyAndLimit, async (req, res) => {
+router.get("/captcha", async (req, res) => {
 	const query = req.query.text;
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
@@ -253,7 +253,7 @@ router.get("/captcha", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	}
 })
-router.get("/trumptweet", apikeyAndLimit, async (req, res) => {
+router.get("/trumptweet", async (req, res) => {
 	const query = req.query.text;
 	if (!query) return res.json(loghandler.nottext)
 	try {
@@ -265,7 +265,7 @@ router.get("/trumptweet", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	}
 })
-router.get("/toonify", apikeyAndLimit, async (req, res) => {
+router.get("/toonify", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -278,7 +278,7 @@ router.get("/toonify", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	}
 })
-router.get("/tahta", apikeyAndLimit, async (req, res) => {
+router.get("/tahta", async (req, res) => {
 	const query = req.query.text;
 	if (!query) return res.json(loghandler.nottext)
 	try {
@@ -290,7 +290,7 @@ router.get("/tahta", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	}
 })
-router.get("/costumtahta", apikeyAndLimit, async (req, res) => {
+router.get("/costumtahta", async (req, res) => {
 	const query1 = req.query.text1;
 	const query2 = req.query.text2;
 	const query3 = req.query.text3;
@@ -306,7 +306,7 @@ router.get("/costumtahta", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	}
 })
-router.get("/instagram", apikeyAndLimit, async (req, res) => {
+router.get("/instagram", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -320,7 +320,7 @@ router.get("/instagram", apikeyAndLimit, async (req, res) => {
 		res.json(loghandler.error)
 	})
 });
-router.get("/tobecontinue", apikeyAndLimit, async (req, res) => {
+router.get("/tobecontinue", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -334,7 +334,7 @@ router.get("/tobecontinue", apikeyAndLimit, async (req, res) => {
 		res.json(loghandler.error)
 	})
 })
-router.get("/scary", apikeyAndLimit, async (req, res) => {
+router.get("/scary", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -348,7 +348,7 @@ router.get("/scary", apikeyAndLimit, async (req, res) => {
 		res.json(loghandler.error)
 	})
 })
-router.get("/glitch", apikeyAndLimit, async (req, res) => {
+router.get("/glitch", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -364,7 +364,7 @@ router.get("/glitch", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/rejected", apikeyAndLimit, async (req, res) => {
+router.get("/rejected", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -380,7 +380,7 @@ router.get("/rejected", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/ps4", apikeyAndLimit, async (req, res) => {
+router.get("/ps4", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -396,7 +396,7 @@ router.get("/ps4", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/brazzers", apikeyAndLimit, async (req, res) => {
+router.get("/brazzers", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -412,7 +412,7 @@ router.get("/brazzers", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/distort", apikeyAndLimit, async (req, res) => {
+router.get("/distort", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -428,7 +428,7 @@ router.get("/distort", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/moustache", apikeyAndLimit, async (req, res) => {
+router.get("/moustache", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -444,7 +444,7 @@ router.get("/moustache", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/frame", apikeyAndLimit, async (req, res) => {
+router.get("/frame", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -460,7 +460,7 @@ router.get("/frame", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/missionpassed", apikeyAndLimit, async (req, res) => {
+router.get("/missionpassed", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -476,7 +476,7 @@ router.get("/missionpassed", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/emboss", apikeyAndLimit, async (req, res) => {
+router.get("/emboss", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -492,7 +492,7 @@ router.get("/emboss", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/spongebob", apikeyAndLimit, async (req, res) => {
+router.get("/spongebob", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -508,7 +508,7 @@ router.get("/spongebob", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/facebook", apikeyAndLimit, async (req, res) => {
+router.get("/facebook", async (req, res) => {
 	const url = req.query.url;
 	const teks = req.query.text
 	if (!teks) return res.json(loghandler.nottext)
@@ -527,7 +527,7 @@ router.get("/facebook", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/discordhouse", apikeyAndLimit, async (req, res) => {
+router.get("/discordhouse", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -544,7 +544,7 @@ router.get("/discordhouse", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/karenhave", apikeyAndLimit, async (req, res) => {
+router.get("/karenhave", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -560,7 +560,7 @@ router.get("/karenhave", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/thanos", apikeyAndLimit, async (req, res) => {
+router.get("/thanos", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -576,7 +576,7 @@ router.get("/thanos", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/approved", apikeyAndLimit, async (req, res) => {
+router.get("/approved", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -592,7 +592,7 @@ router.get("/approved", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/burn", apikeyAndLimit, async (req, res) => {
+router.get("/burn", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -608,7 +608,7 @@ router.get("/burn", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/challenger", apikeyAndLimit, async (req, res) => {
+router.get("/challenger", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -624,7 +624,7 @@ router.get("/challenger", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/crush", apikeyAndLimit, async (req, res) => {
+router.get("/crush", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -640,7 +640,7 @@ router.get("/crush", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/dictator", apikeyAndLimit, async (req, res) => {
+router.get("/dictator", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -656,7 +656,7 @@ router.get("/dictator", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/vs", apikeyAndLimit, async (req, res) => {
+router.get("/vs", async (req, res) => {
 	const url = req.query.url;
 	const url2 = req.query.url2;
 	if (!url2) return resError(res, "masukkan parameter url2");
@@ -677,7 +677,7 @@ router.get("/vs", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/emojipedia", apikeyAndLimit, async (req, res) => {
+router.get("/emojipedia", async (req, res) => {
 	const query = req.query.query;
 	if (!query) return res.json(loghandler.notquery)
 	sticker.toSticker(query)
@@ -693,7 +693,7 @@ router.get("/emojipedia", apikeyAndLimit, async (req, res) => {
 			console.log(err)
 		})
 })
-router.get("/triggered", apikeyAndLimit, async (req, res) => {
+router.get("/triggered", async (req, res) => {
 	if (!req.query.url) return res.json(loghandler.noturl)
 	if (!regexUrl(req.query.url)) return res.json(loghandler.urlInvalid);
 	await getBuffer("https://canvacord-production.up.railway.app/api/triggered?url=" + req.query.url)
@@ -705,7 +705,7 @@ router.get("/triggered", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 })
-router.get("/rip", apikeyAndLimit, async (req, res) => {
+router.get("/rip", async (req, res) => {
 	if (!req.query.url) return res.json(loghandler.noturl)
 	if (!regexUrl(req.query.url)) return res.json(loghandler.urlInvalid);
 	await getBuffer("https://canvacord-production.up.railway.app/api/rip?url=" + req.query.url)
@@ -718,7 +718,7 @@ router.get("/rip", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 })
-router.get("/greyscale", apikeyAndLimit, async (req, res) => {
+router.get("/greyscale", async (req, res) => {
 	if (!req.query.url) return res.json(loghandler.noturl)
 	if (!regexUrl(req.query.url)) return res.json(loghandler.urlInvalid);
 	await getBuffer("https://canvacord-production.up.railway.app/api/greyscale?url=" + req.query.url)
@@ -731,7 +731,7 @@ router.get("/greyscale", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 })
-router.get("/jail", apikeyAndLimit, async (req, res) => {
+router.get("/jail", async (req, res) => {
 	if (!req.query.url) return res.json(loghandler.noturl)
 	if (!regexUrl(req.query.url)) return res.json(loghandler.urlInvalid);
 	await getBuffer("https://canvacord-production.up.railway.app/api/jail?url=" + req.query.url)
@@ -744,7 +744,7 @@ router.get("/jail", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 })
-router.get("/darkness", apikeyAndLimit, async (req, res) => {
+router.get("/darkness", async (req, res) => {
 	if (!req.query.ammount) return resError(res, "masukkan parameter ammount");
 	if (!req.query.url) return res.json(loghandler.noturl)
 	if (!regexUrl(req.query.url)) return res.json(loghandler.urlInvalid);
@@ -758,7 +758,7 @@ router.get("/darkness", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 })
-router.get("/delete", apikeyAndLimit, async (req, res) => {
+router.get("/delete", async (req, res) => {
 	if (!req.query.url) return res.json(loghandler.noturl)
 	if (!regexUrl(req.query.url)) return res.json(loghandler.urlInvalid);
 	await getBuffer("https://canvacord-production.up.railway.app/api/delete?url=" + req.query.url)
@@ -771,7 +771,7 @@ router.get("/delete", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 })
-router.get("/invert", apikeyAndLimit, async (req, res) => {
+router.get("/invert", async (req, res) => {
 	if (!req.query.url) return res.json(loghandler.noturl)
 	if (!regexUrl(req.query.url)) return res.json(loghandler.urlInvalid);
 	await getBuffer("https://canvacord-production.up.railway.app/api/invert?url=" + req.query.url)
@@ -783,7 +783,7 @@ router.get("/invert", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 })
-router.get("/sepia", apikeyAndLimit, async (req, res) => {
+router.get("/sepia", async (req, res) => {
 	if (!req.query.url) return res.json(loghandler.noturl)
 	if (!regexUrl(req.query.url)) return res.json(loghandler.urlInvalid);
 	await getBuffer("https://canvacord-production.up.railway.app/api/sepia?url=" + req.query.url)
@@ -795,7 +795,7 @@ router.get("/sepia", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 })
-router.get("/blur", apikeyAndLimit, async (req, res) => {
+router.get("/blur", async (req, res) => {
 	if (!req.query.url) return res.json(loghandler.noturl)
 	if (!regexUrl(req.query.url)) return res.json(loghandler.urlInvalid);
 	await getBuffer("https://canvacord-production.up.railway.app/api/blur?url=" + req.query.url)
@@ -807,7 +807,7 @@ router.get("/blur", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 })
-router.get("/circle", apikeyAndLimit, async (req, res) => {
+router.get("/circle", async (req, res) => {
 	if (!req.query.url) return res.json(loghandler.noturl)
 	if (!regexUrl(req.query.url)) return res.json(loghandler.urlInvalid);
 	await getBuffer("https://canvacord-production.up.railway.app/api/circle?url=" + req.query.url)
@@ -819,7 +819,7 @@ router.get("/circle", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 })
-router.get("/fuse", apikeyAndLimit, async (req, res) => {
+router.get("/fuse", async (req, res) => {
 	const { url, url2 } = req.query;
 	if (!url) return res.json(loghandler.noturl)
 	if (!url2) return resError(res, 'masukkan parameter url2');
@@ -834,7 +834,7 @@ router.get("/fuse", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 })
-router.get("/phub", apikeyAndLimit, async (req, res) => {
+router.get("/phub", async (req, res) => {
 	const { url, username, text } = req.query;
 	if (!url) return res.json(loghandler.noturl)
 	if (!username) return res.json(loghandler.notusername);
@@ -849,7 +849,7 @@ router.get("/phub", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 })
-router.get("/ytcomment", apikeyAndLimit, async (req, res) => {
+router.get("/ytcomment", async (req, res) => {
 	const { url, username, text } = req.query;
 	if (!url) return res.json(loghandler.noturl)
 	if (!username) return res.json(loghandler.notusername);
@@ -864,7 +864,7 @@ router.get("/ytcomment", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 })
-router.get("/resize", apikeyAndLimit, async (req, res) => {
+router.get("/resize", async (req, res) => {
 	const { width, height, url } = req.query;
 	if (!height || !width) return resError(res, "masukkan parameter width & height");
 	if (!Number(width) || !Number(height)) return resError(res, "parameter height & width berupa angka");
@@ -877,7 +877,7 @@ router.get("/resize", apikeyAndLimit, async (req, res) => {
 		res.json(loghandler.error);
 	});
 })
-router.get("/wanted", apikeyAndLimit, async (req, res) => {
+router.get("/wanted", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -891,7 +891,7 @@ router.get("/wanted", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 })
-router.get("/wasted", apikeyAndLimit, async (req, res) => {
+router.get("/wasted", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -905,7 +905,7 @@ router.get("/wasted", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 })
-router.get("/affect", apikeyAndLimit, async (req, res) => {
+router.get("/affect", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -919,7 +919,7 @@ router.get("/affect", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 })
-router.get("/gay", apikeyAndLimit, async (req, res) => {
+router.get("/gay", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -933,7 +933,7 @@ router.get("/gay", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 })
-router.get("/joke", apikeyAndLimit, async (req, res) => {
+router.get("/joke", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -947,7 +947,7 @@ router.get("/joke", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 })
-router.get("/opinion", apikeyAndLimit, async (req, res) => {
+router.get("/opinion", async (req, res) => {
 	const { text, url } = req.query;
 	if (!text) return res.json(loghandler.nottext)
 	if (!url) return res.json(loghandler.noturl)
@@ -962,7 +962,7 @@ router.get("/opinion", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 })
-router.get("/trash", apikeyAndLimit, async (req, res) => {
+router.get("/trash", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -976,7 +976,7 @@ router.get("/trash", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/facepalm", apikeyAndLimit, async (req, res) => {
+router.get("/facepalm", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -990,7 +990,7 @@ router.get("/facepalm", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 })
-router.get("/beautiful", apikeyAndLimit, async (req, res) => {
+router.get("/beautiful", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -1002,7 +1002,7 @@ router.get("/beautiful", apikeyAndLimit, async (req, res) => {
 	});
 })
 
-router.get("/meme", apikeyAndLimit, async (req, res) => {
+router.get("/meme", async (req, res) => {
 	const { text, text2, url } = req.query;
 	if (!text) return res.json(loghandler.nottext)
 	if (!text2) return res.json(loghandler.nottext2);
@@ -1031,7 +1031,7 @@ router.get("/meme", apikeyAndLimit, async (req, res) => {
 	});
 })
 
-router.get("/carbontext", apikeyAndLimit, async (req, res) => {
+router.get("/carbontext", async (req, res) => {
 	if (!req.query.text) return res.json(loghandler.nottext)
 	await getBuffer(`https://thiccyscarbonapi.herokuapp.com/?code=${req.query.text}&language=Nodejs&theme=dark&exportSize=3x`).then(buffer => {
 		res.type("png").send(buffer)
@@ -1040,7 +1040,7 @@ router.get("/carbontext", apikeyAndLimit, async (req, res) => {
 		res.json(loghandler.error);
 	});
 })
-router.get("/ssmap", apikeyAndLimit, async (req, res) => {
+router.get("/ssmap", async (req, res) => {
 	const query = req.query.query;
 	if (!query) return res.json(loghandler.notquery)
 	await getBuffer(`https://cdn.statically.io/screenshot/full=true/www.google.com/maps/place/${query}`).then(result => {
@@ -1050,7 +1050,7 @@ router.get("/ssmap", apikeyAndLimit, async (req, res) => {
 		res.json(loghandler.error);
 	});
 })
-router.get("/ssweb", apikeyAndLimit, async (req, res) => {
+router.get("/ssweb", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl)
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -1062,7 +1062,7 @@ router.get("/ssweb", apikeyAndLimit, async (req, res) => {
 		res.json(loghandler.error);
 	});
 })
-router.get("/nulis", apikeyAndLimit, async (req, res) => {
+router.get("/nulis", async (req, res) => {
 	text = req.query.text;
 	if (!text) return res.json(loghandler.nottext)
 	await getJson("https://st4rz.herokuapp.com/api/nulis?text=" + encodeURIComponent(text)).then(async respon => {
@@ -1074,7 +1074,7 @@ router.get("/nulis", apikeyAndLimit, async (req, res) => {
 		res.json(loghandler.error);
 	});
 })
-router.get("/nulis2", apikeyAndLimit, async (req, res) => {
+router.get("/nulis2", async (req, res) => {
 	const { text, nama, kelas } = req.query;
 	if (!text) return res.json(loghandler.nottext)
 	if (!nama) return resError(res, "masukkan parameter nama");
@@ -1090,7 +1090,7 @@ router.get("/nulis2", apikeyAndLimit, async (req, res) => {
 	});
 })
 
-router.get("/sertitolol", apikeyAndLimit, async (req, res) => {
+router.get("/sertitolol", async (req, res) => {
 	text = req.query.text;
 	if (!text) return res.json(loghandler.nottext)
 	await getBuffer(`https://tolol.ibnux.com/img.php?nama=${text}`).then(buffer => {
@@ -1101,7 +1101,7 @@ router.get("/sertitolol", apikeyAndLimit, async (req, res) => {
 		res.json(loghandler.error);
 	});
 })
-router.get("/tts", apikeyAndLimit, async (req, res) => {
+router.get("/tts", async (req, res) => {
 	const { language, text } = req.query;
 	if (!language) return resError(res, "masukkan parameter language");
 	if (!text) return res.json(loghandler.nottext)
@@ -1117,7 +1117,7 @@ router.get("/tts", apikeyAndLimit, async (req, res) => {
 		res.json(loghandler.error);
 	});
 });
-router.get("/ttp", apikeyAndLimit, async (req, res) => {
+router.get("/ttp", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext)
 	await getBuffer(`https://huratera.sirv.com/PicsArt_08-01-10.00.42.png?profile=Example-Text&text.0.text=${encodeURIComponent(text)}&text.0.color=ffffff&text.0.background.color=0000ff&text.0.font.family=Changa%20One&&text.0.outline.color=0000`)
@@ -1130,7 +1130,7 @@ router.get("/ttp", apikeyAndLimit, async (req, res) => {
 			console.log(err)
 		})
 });
-router.get("/ttp2", apikeyAndLimit, async (req, res) => {
+router.get("/ttp2", async (req, res) => {
 	const { text, color } = req.query;
 	if (!text) return res.json(loghandler.nottext);
 	if (!color) return resError(res, "masukkan parameter color");
@@ -1143,7 +1143,7 @@ router.get("/ttp2", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 })
-router.get("/ttp3", apikeyAndLimit, async (req, res) => {
+router.get("/ttp3", async (req, res) => {
 	text = req.query.text;
 	if (!text) return res.json(loghandler.nottext)
 	await getBuffer(`https://huratera.sirv.com/PicsArt_08-01-10.00.42.png?profile=Example-Text&text.0.text=${encodeURIComponent(text)}&text.0.opacity=93&text.0.outline.color=fff40a&text.0.outline.width=4&text.0.color=000000&text.0.font.family=Permanent%20Marker&text.0.background.color=ffffff`).then(buffer => {
@@ -1153,7 +1153,7 @@ router.get("/ttp3", apikeyAndLimit, async (req, res) => {
 		res.json(loghandler.error);
 	});
 })
-router.get("/attp", apikeyAndLimit, async (req, res) => {
+router.get("/attp", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext)
 	await getBuffer(`https://api.xteam.xyz/attp?file&text=${text}`)
@@ -1164,7 +1164,7 @@ router.get("/attp", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error)
 		})
 });
-router.get("/spotifycard", apikeyAndLimit, async (req, res) => {
+router.get("/spotifycard", async (req, res) => {
 	const { author, album, title, img, start, end } = req.query;
 	if (!author || !album || !title || !img || !start || !end) return resError(res, "masukkan parameter 'author, album, title, img, start, end'");
 	await getBuffer(`https://canvacord-production.up.railway.app/api/spotify?author=${author}&album=${album}&start=${start}&end=${end}&img=${img}&title=${title}`).then(buffer => {
@@ -1175,7 +1175,7 @@ router.get("/spotifycard", apikeyAndLimit, async (req, res) => {
 		res.json(loghandler.error);
 	});
 })
-router.get("/welcome2", apikeyAndLimit, async (req, res) => {
+router.get("/welcome2", async (req, res) => {
 	const { name, ucapan, memcount, gcname, pp, ppgc } = req.query;
 	if (!name) return resError(res, "masukkan parameter name");
 	if (!ucapan) return resError(res, "masukkan parameter ucapan");
@@ -1191,7 +1191,7 @@ router.get("/welcome2", apikeyAndLimit, async (req, res) => {
 		res.json(loghandler.error);
 	});
 })
-router.get("/goodbye2", apikeyAndLimit, async (req, res) => {
+router.get("/goodbye2", async (req, res) => {
 	const { name, ucapan, memcount, gcname, pp, ppgc } = req.query;
 	if (!name) return resError(res, "masukkan parameter name");
 	if (!ucapan) return resError(res, "masukkan parameter ucapan");
@@ -1207,7 +1207,7 @@ router.get("/goodbye2", apikeyAndLimit, async (req, res) => {
 		res.json(loghandler.error);
 	});
 })
-router.get("/welcome", apikeyAndLimit, async (req, res) => {
+router.get("/welcome", async (req, res) => {
 	const { name, ucapan, memcount, gcname, pp, bg } = req.query;
 	if (!name) return resError(res, "masukkan parameter name");
 	if (!ucapan) return resError(res, "masukkan parameter ucapan");
@@ -1223,7 +1223,7 @@ router.get("/welcome", apikeyAndLimit, async (req, res) => {
 	});
 })
 
-router.get("/goodbye", apikeyAndLimit, async (req, res) => {
+router.get("/goodbye", async (req, res) => {
 	const { name, ucapan, memcount, gcname, pp, bg } = req.query;
 	if (!name) return resError(res, "masukkan parameter name");
 	if (!ucapan) return resError(res, "masukkan parameter ucapan");

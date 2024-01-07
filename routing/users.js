@@ -155,7 +155,7 @@ router.post("/updates", async (req, res) => {
 		const anu = await User.findOne({ email: email });
 		let resulter;
 		try {
-			resulter = await getJson("https://api-xcoders.xyz/api/cekkey?apikey=" + anu.apikey, { method: 'GET' });
+			resulter = await getJson("https://api-fxc7.cloud.okteto.net//api/cekkey?apikey=" + anu.apikey, { method: 'GET' });
 		} catch (er) {
 			console.log(er);
 			requests(false, undefined);

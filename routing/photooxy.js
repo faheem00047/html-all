@@ -14,7 +14,7 @@ const photooxy = new Photooxy();
 const apikeyAndLimit = require("../library/apikeyAndLimit");
 router = Router();
 
-router.get("/pubg", apikeyAndLimit, async (req, res) => {
+router.get("/pubg", async (req, res) => {
 	const { text, text2 } = req.query;
 	if (!text) return res.json(loghandler.nottext);
 	if (!text2) return res.json(loghandler.nottext2);
@@ -27,7 +27,7 @@ router.get("/pubg", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/slidetext", apikeyAndLimit, async (req, res) => {
+router.get("/slidetext", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	photooxy.radio("https://photooxy.com/other-design/make-a-video-that-spells-your-name-237.html", [text])
@@ -39,7 +39,7 @@ router.get("/slidetext", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/gravity", apikeyAndLimit, async (req, res) => {
+router.get("/gravity", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	photooxy.text("https://photooxy.com/banner-cover/graffiti-text-cover-222.html", [text])
@@ -51,7 +51,7 @@ router.get("/gravity", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/rainbow", apikeyAndLimit, async (req, res) => {
+router.get("/rainbow", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	photooxy.text("https://photooxy.com/logo-and-text-effects/rainbow-shine-text-223.html", [text])
@@ -63,7 +63,7 @@ router.get("/rainbow", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/oceansea", apikeyAndLimit, async (req, res) => {
+router.get("/oceansea", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	photooxy.text("https://photooxy.com/logo-and-text-effects/creating-an-underwater-ocean-363.html", [text])
@@ -76,7 +76,7 @@ router.get("/oceansea", apikeyAndLimit, async (req, res) => {
 		});
 });
 
-router.get("/romantic", apikeyAndLimit, async (req, res) => {
+router.get("/romantic", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	photooxy.text("https://photooxy.com/logo-and-text-effects/romantic-messages-for-your-loved-one-391.html", [text])
@@ -89,7 +89,7 @@ router.get("/romantic", apikeyAndLimit, async (req, res) => {
 		});
 });
 
-router.get("/shadow", apikeyAndLimit, async (req, res) => {
+router.get("/shadow", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	photooxy.text("https://photooxy.com/logo-and-text-effects/shadow-text-effect-in-the-sky-394.html", [text])
@@ -101,7 +101,7 @@ router.get("/shadow", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/smoke", apikeyAndLimit, async (req, res) => {
+router.get("/smoke", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	photooxy.text("https://photooxy.com/other-design/create-an-easy-smoke-type-effect-390.html", [text])
@@ -113,7 +113,7 @@ router.get("/smoke", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/burnpaper", apikeyAndLimit, async (req, res) => {
+router.get("/burnpaper", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	photooxy.text("https://photooxy.com/logo-and-text-effects/write-text-on-burn-paper-388.html", [text])
@@ -125,7 +125,7 @@ router.get("/burnpaper", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/naruto", apikeyAndLimit, async (req, res) => {
+router.get("/naruto", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	photooxy.text("https://photooxy.com/manga-and-anime/make-naruto-banner-online-free-378.html", [text])
@@ -137,7 +137,7 @@ router.get("/naruto", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/lovemessage", apikeyAndLimit, async (req, res) => {
+router.get("/lovemessage", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	photooxy.text("https://photooxy.com/logo-and-text-effects/create-a-picture-of-love-message-377.html", [text])
@@ -149,7 +149,7 @@ router.get("/lovemessage", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/grass", apikeyAndLimit, async (req, res) => {
+router.get("/grass", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	photooxy.text("https://photooxy.com/logo-and-text-effects/make-quotes-under-grass-376.html", [text])
@@ -161,7 +161,7 @@ router.get("/grass", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/glitch", apikeyAndLimit, async (req, res) => {
+router.get("/glitch", async (req, res) => {
 	const text = req.query.text;
 	const text2 = req.query.text2;
 	if (!text) return res.json(loghandler.nottext)
@@ -175,7 +175,7 @@ router.get("/glitch", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/doubleheart", apikeyAndLimit, async (req, res) => {
+router.get("/doubleheart", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	photooxy.text("https://photooxy.com/logo-and-text-effects/love-text-effect-372.html", [text])
@@ -187,7 +187,7 @@ router.get("/doubleheart", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/coffecup", apikeyAndLimit, async (req, res) => {
+router.get("/coffecup", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	photooxy.text("https://photooxy.com/logo-and-text-effects/put-any-text-in-to-coffee-cup-371.html", [text])
@@ -199,7 +199,7 @@ router.get("/coffecup", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/lovetext", apikeyAndLimit, async (req, res) => {
+router.get("/lovetext", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	photooxy.text("https://photooxy.com/logo-and-text-effects/love-text-effect-372.html", [text])
@@ -211,7 +211,7 @@ router.get("/lovetext", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/butterfly", apikeyAndLimit, async (req, res) => {
+router.get("/butterfly", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	photooxy.text("https://photooxy.com/logo-and-text-effects/butterfly-text-with-reflection-effect-183.html", [text])
@@ -223,7 +223,7 @@ router.get("/butterfly", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/coffee", apikeyAndLimit, async (req, res) => {
+router.get("/coffee", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	photooxy.text("https://photooxy.com/logo-and-text-effects/put-your-text-on-a-coffee-cup--174.html", [text])
@@ -235,7 +235,7 @@ router.get("/coffee", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/quotewood", apikeyAndLimit, async (req, res) => {
+router.get("/quotewood", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	photooxy.text("https://photooxy.com/logo-and-text-effects/write-art-quote-on-wood-heart-370.html", [text])
@@ -247,7 +247,7 @@ router.get("/quotewood", apikeyAndLimit, async (req, res) => {
 			res.json(loghandler.error);
 		});
 });
-router.get("/flaming", apikeyAndLimit, async (req, res) => {
+router.get("/flaming", async (req, res) => {
 	const text = req.query.text;
 	if (!text) return res.json(loghandler.nottext);
 	photooxy.text("https://photooxy.com/logo-and-text-effects/realistic-flaming-text-effect-online-197.html", [text])
@@ -261,7 +261,7 @@ router.get("/flaming", apikeyAndLimit, async (req, res) => {
 });
 
 //images URLs
-router.get("/exposure", apikeyAndLimit, async (req, res) => {
+router.get("/exposure", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -277,7 +277,7 @@ router.get("/exposure", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	});
 });
-router.get("/flame", apikeyAndLimit, async (req, res) => {
+router.get("/flame", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -293,7 +293,7 @@ router.get("/flame", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	});
 });
-router.get("/frame", apikeyAndLimit, async (req, res) => {
+router.get("/frame", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -309,7 +309,7 @@ router.get("/frame", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	});
 });
-router.get("/memory", apikeyAndLimit, async (req, res) => {
+router.get("/memory", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -325,7 +325,7 @@ router.get("/memory", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	});
 });
-router.get("/nature", apikeyAndLimit, async (req, res) => {
+router.get("/nature", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -341,7 +341,7 @@ router.get("/nature", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	});
 });
-router.get("/ripped", apikeyAndLimit, async (req, res) => {
+router.get("/ripped", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -357,7 +357,7 @@ router.get("/ripped", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	});
 });
-router.get("/tearing", apikeyAndLimit, async (req, res) => {
+router.get("/tearing", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -373,7 +373,7 @@ router.get("/tearing", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	});
 });
-router.get("/iphone", apikeyAndLimit, async (req, res) => {
+router.get("/iphone", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -389,7 +389,7 @@ router.get("/iphone", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	});
 });
-router.get("/anaglyph", apikeyAndLimit, async (req, res) => {
+router.get("/anaglyph", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -405,7 +405,7 @@ router.get("/anaglyph", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	});
 });
-router.get("/mirrors", apikeyAndLimit, async (req, res) => {
+router.get("/mirrors", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -421,7 +421,7 @@ router.get("/mirrors", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	});
 });
-router.get("/shattered", apikeyAndLimit, async (req, res) => {
+router.get("/shattered", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -437,7 +437,7 @@ router.get("/shattered", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	});
 });
-router.get("/burning", apikeyAndLimit, async (req, res) => {
+router.get("/burning", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -453,7 +453,7 @@ router.get("/burning", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	});
 });
-router.get("/place", apikeyAndLimit, async (req, res) => {
+router.get("/place", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);
@@ -469,7 +469,7 @@ router.get("/place", apikeyAndLimit, async (req, res) => {
 		console.log(er);
 	});
 });
-router.get("/toilet", apikeyAndLimit, async (req, res) => {
+router.get("/toilet", async (req, res) => {
 	const url = req.query.url;
 	if (!url) return res.json(loghandler.noturl);
 	if (!regexUrl(url)) return res.json(loghandler.urlInvalid);

@@ -100,9 +100,9 @@ app.get("/docs", async (req, res) => {
 	if (!Hit.hitCount) hit = hitCount.count;
 	else hit = Hit.hitCount;**/
 	if (!req.user) {
-		text_running = "Update+Instagram+Stories;Silahkan+lapor;Bila+menemukan+bug;Terima+kasih.";
+		text_running = "Update+Instagram+Stories;Soon+Add+Photofunia+Makers;My+OwNeR+FiX+Bugs; Welcome+Faheem+Rest+Api;Add+New+Ephoto+Logos;Th3+Fah33m.";
 		users = {
-			apikey: "APIKEY",
+			apikey: "faheem",
 			url: profilePath
 		};
 	} else {
@@ -138,9 +138,9 @@ cron.schedule("0 0 * * *", async () => {
 				limit: 15
 			});
 		}
-		console.log(`[ ${time.tz("Asia/Jakarta").format("HH:mm")} ] Success Reset Limit`);
+		console.log(`[ ${time.tz("Asia/Karachi").format("HH:mm")} ] Success Reset Limit`);
 	});
 }, {
 	scheduled: true,
-	timezone: "Asia/Jakarta"
+	timezone: "Asia/Karachi"
 });

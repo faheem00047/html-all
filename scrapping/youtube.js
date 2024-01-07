@@ -1,9 +1,9 @@
 /**
- * Author  : Farhannnnn
+ * Author  : Faheem
  * Name    : Youtube Downloader
  * Tools   : Search, MP3, MP4, Short
  * Version : 1.0
- * Update  : 31 Januari 2022
+ * Update  : 31 January 2022
  * 
  * If you are a reliable programmer or the best developer, please don't change anything.
  * If you want to be appreciated by others, then don't change anything in this script.
